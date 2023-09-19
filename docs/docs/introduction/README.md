@@ -1,0 +1,51 @@
+# Introduction
+
+
+
+## What is the event about? 
+Yes FPGA event, dun it sound cool? Learn the stuff in this website and you will be able to get all the skill to complete the event!
+
+#### WUD is built on 3 concepts:
+
+> `WATCHERS` query your Docker hosts to get the containers to watch
+
+> `REGISTRIES` query the Docker registries to find available updates
+
+> `TRIGGERS` perform actions when updates are available
+
+![image](wud_arch.png)
+
+## Many supported triggers
+> Send notifications using **Smtp**, [**Apprise**](https://github.com/caronc/apprise-api), [**Ifttt**](https://ifttt.com), [**Pushover**](https://pushover.net), [**Slack**](https://slack.com), [**Telegram**](https://telegram.org/), [**Discord**](https://discord.com/)...
+
+> Automatically update your [**docker**](https://www.docker.com) containers or your [**docker-compose**](https://docs.docker.com/compose) stack.
+
+> Integrate with third-party systems using [**Kafka**](https://kafka.apache.org), [**Mqtt**](https://mqtt.org), **Http Webhooks**...
+
+## Many supported registries
+> [**Azure Container Registry**](https://azure.microsoft.com/services/container-registry)
+
+> [**AWS Elastic Container Registry**](https://aws.amazon.com/ecr)
+
+> [**Google Container Registry**](https://cloud.google.com/container-registry)
+
+> [**Github Container Registry**](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-docker-registry)
+
+> [**Docker Hub (public & private repositories)**](http://hub.docker.com)
+
+## REST API & Web UI
+![image](../ui/ui.png)
+
+## Good integration with
+> [**Home-Assistant**](https://www.home-assistant.io/)
+
+> [**Prometheus**](https://prometheus.io/)
+
+> [**Grafana**](https://grafana.com/)
+
+## Ready to go?
+!> [**Follow the quick start guide!**](quickstart/)
+
+
+## License
+This project is licensed under the [MIT license](https://github.com/fmartinou/whats-up-docker/blob/master/LICENSE).
