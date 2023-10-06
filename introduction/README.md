@@ -2,14 +2,14 @@
 
 
 
-## What is the event about? 
-Yes FPGA event, dun it sound cool? Learn the stuff in this website and you will be able to get all the skill to complete the event!
+## What's up Docker? <small>(aka **WUD**)</small>
+Gets you notified when new versions of your Docker containers are available and lets you react the way you want.
 
 #### WUD is built on 3 concepts:
 
-> `WATCHERS` query your Docker hosts to get the containers to watch
+!> `WATCHERS` query your Docker hosts to get the containers to watch
 
-> `REGISTRIES` query the Docker registries to find available updates
+?> `REGISTRIES` query the Docker registries to find available updates
 
 > `TRIGGERS` perform actions when updates are available
 
@@ -44,8 +44,11 @@ Yes FPGA event, dun it sound cool? Learn the stuff in this website and you will 
 > [**Grafana**](https://grafana.com/)
 
 ## Ready to go?
-!> [**Follow the quick start guide!**](quickstart/)
+> [**Follow the quick start guide!**](quickstart/)
 
+
+
+<a href="https://www.buymeacoffee.com/61rUNMm" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 ## License
 This project is licensed under the [MIT license](https://github.com/fmartinou/whats-up-docker/blob/master/LICENSE).

@@ -1,12 +1,19 @@
-# Frequencly Ask Question
+# FAQ XXX
+## Core dumped on Raspberry PI
+If at startup you face an issue looking like
+```
+#
+# Fatal error in , line 0
+# unreachable code
+#
+#
+#
+#FailureMessage Object: 0x7eace25c
+```
 
+Add the `--security-opt seccomp=unconfined` option to your docker command 
+Example
+```
+docker run ... --security-opt seccomp=unconfined fmartinou/whats-up-docker
+```
 
-
-## Where do I buy parts?
-Go google yourself, taobao have all the goods
-
-## When in doubt what should I do?
-What doesn't kill you make you stronger, so try it out!
-
-## I want more material or motor whar should I do?
-You use your own money!
