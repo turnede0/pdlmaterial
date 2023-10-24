@@ -8,6 +8,6 @@
 - [Basics](basics/)
 - [Image_Processing](Image_Processing/)
 - [Etching](etching/)
-- [Ultra96](u96/)
+- [Ultra96_Use](u96/)
 - [Mechanical](mechanical/)
-- [Ultra96(overlay)](overlay/)
+- [Ultra96_Web](overlay/)
