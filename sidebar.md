@@ -7,3 +7,6 @@
 - [CV2_UI](new/)
 - [Basics](basics/)
 - [Image_Processing](Image_Processing/)
+- [Etching](etching/)
+- [Ultra96](u96/)
+- [Mechanical](mechanical/)
