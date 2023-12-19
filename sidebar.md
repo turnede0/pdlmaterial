@@ -11,3 +11,4 @@
 - [Ultra96_Use](u96/)
 - [Mechanical](mechanical/)
 - [Ultra96_Web](overlay/)
+- [vivado_flow](vivado_flow/)
