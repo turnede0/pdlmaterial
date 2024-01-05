@@ -1,4 +1,6 @@
-# Web_Server
+# PCB Etching Production Line User Manual
+
+## Web_Server
 
 The following section will explain how to set up a web server on ultra96v2 using flask to live stream the camera from ultra96
 
