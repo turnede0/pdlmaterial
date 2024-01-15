@@ -101,7 +101,7 @@ The quantization script looks something like this but can change based on the re
 ```python
 import tensorflow as tf
 
-# compile  vai_c_tensorflow2 - m "yolov3.h5" -a "arch.json" -n "yolov3_new_tiny"
+# compile  vai_c_tensorflow2 - m "yolov3.h5" -a "arch.json" -n "yolov3_new_tiny" --options '{"input_shape": "1,224,224,3"}'
 
 model = tf.keras.models.load_model("yolov3_new_tiny.h5")
 

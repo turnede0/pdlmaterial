@@ -402,7 +402,7 @@ fps = total_images/(time2-time1)
 print("Performance: {} FPS".format(fps))
 ```
 ## 4. Real-Time YOLO
-
+    
 Now that we can sucessfully run the model by loading images let's prepare it for real time processing
 
 To do so first we have to set up the displayport
