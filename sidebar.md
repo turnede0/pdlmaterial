@@ -12,3 +12,5 @@
 - [Mechanical](mechanical/)
 - [Ultra96(overlay)](overlay/)
 - [Vivado](vivado_flow/)
+- [Vitis-AI](Vitis-AI/)
+- [PYNQ-DPU](PYNQ-DPU/)
