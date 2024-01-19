@@ -33,20 +33,26 @@
 
 3. Once it loads, double-click the Zynq MPSoC block to customize its IP settings.
 
+![classes](./zynqblock.png)
+
 4. Go to GPIO as seen in the photo and change "EMIO" to "16". This allows 16 GPIOs to be mapped using PL (Programmable Logic).
 
 ![classes](./gpio.png)
 
-5. Right-click the Zynq MPSoC block on the block design and select "Make External". Make sure to give it the name "GPIO" by selecting it 
+5. Disable Axi master interface by going to the PS-PL Configuration, PS-PL interface, Master Interface and uncheck the AXI HPM0 LPD.
+
+![classes](./disable.png)
+
+6. Right-click the GPIO on the ZYNQ block design and select "Make External". Make sure to give it the name "GPIO" by selecting it 
 first. On the left, a box should appear showing its name.
 
 ![classes](./ext_gpio.png)
 
-6. Once done, on the left side of the design, you should see the file. Right-click it and select the "HDL Wrapper" option.
-
-##  **Now, let's map the GPIO to their pins:**
+6. Once done, on the left side of the design, you should see the file. Right-click it and select the "HDL Wrapper" option. Incase you change anything make sure to redo this step otherwise you will get an error in later stages.
 
 ![classes](./cns.png)
+
+##  **Now, let's map the GPIO to their pins:**
 
 1. To do so, right-click the constraint source and select "Add a New Source". Choose "Constraints".
 
@@ -57,6 +63,8 @@ first. On the left, a box should appear showing its name.
 ![classes](./constraintsadd.png)
 
 3. Add the following code:
+
+![classes](./constraint.png)
 
 ```vhdl
 set_property PACKAGE_PIN D7 [get_ports {GPIO_tri_io[0]}]
@@ -85,7 +93,7 @@ Once done make sure to create the hdl wrapper by right clicking the design sourc
 
 ![classes](./hdl_wrapper.png)
 
-## Save the file. Then, click "Generate Bitstream" on the left.
+4. Save the file. Then, click "Generate Bitstream" on the left.
 
 ![classes](./gen_bit.png)
 
@@ -101,17 +109,99 @@ Rename them such that they have the same name
 
 ## Part 2 Using Axi
 
-Make sure to set up the axi on zynq by activating it on the PS-PL interface 
+Similar to the first section create a new porject and choose Ultra96v2. Create a new block design and search for the following components. 
 
-Search Axi block from the ip library and add the axi interconnect block
+Axi Interconnect, Processor System Reset, UART 16550, concat, ZYNQ UltraScale+ MPSOC. Add them to the block design.
 
-Choose the block you want from uart i2c PWM etc and add it to the block design
+Make sure to add 2 UART blocks to the design.
 
-![classes](./uart.png)
+![classes](./full.png)
 
-Make sure to connect it to a Axi interconnect block as well as a processor system reset
+Now the first thing we will do is run the block automation.
 
-Then map the pins externally and set the LVCMOS to 1.8V
+![classes](./block_auto.png)
+
+This will help speed up the block design process and require us to change less things required.
+
+Once that is done double click on the ZYNQ block, and go to the GPIO page like in the previous example and change emio to 5 as some of the pins will be used for uart.
+
+![classes](./gpiosensor.png)
+
+Once this is done if you look above on the same page, you will find uart0 please activate MODEM.
+
+![classes](./uartbt.png)
+
+Now that we have the two we also have to deactive one of the master axi ports. To do so, go to the PS-PL interface section like shown in the gpio example in part 1.
+
+Uncheck AXI HPM1 FPD or AXI HPM0 LPD or both based on your system. Only AXI HPM0 FPD is required.
+
+![classes](./master.png)
+
+Now save the changes and check whether the UART and GPIO show up on the ZYNQ block design.
+
+Now lets map the GPIO and UART externally such that it is connected to external pins.
+
+To do so, right click on the GPIO and click make external. Then rename the gpio flag to GPIO_SENSORS.
+
+For UART first open up the UART by clicking on the UART icon on the ZYNQ. Then right click on emio_uart0_ctsn and click make external. Rename the flag to BT_ctsn.
+
+Repeat this for emio_uart_rtsn but rename that flag to BT_rtsn. Double check the figure below to see if you have everything done correctly.
+
+![classes](./bt_uart.png)
+
+That is one way to map the uart. Another method would be to use the AXI Interconnect block, UART 16550 and Processor System Reset.
+
+To do that, first connect the M_AXI_HPMI_FPD to the slave port of the AXI Interconnect S00 AXI. Then connect the master ports of the Axi Connect to the slave ports of each UART 16550 blocks.
+
+![classes](./axi.png)
+
+After this, connect the interconnect_aresetn from the Processor System Reset to AResetN on the Axi Interconnect.
+
+![classes](./preset.png)
+
+Finally select the Run Connection Automation on the top.
+
+![classes](./all.png)
+
+Select ALL and click OK
+
+![classes](./all2.png)
+
+The wires should automatically route for you leaving the UART pin mapping left and the interupt left.
+
+To Map the UART pins, first expand the UART icon on the UART 16550 block like you did on the ZYNQ block.
+
+Then make external the following pins.
+
+![classes](./uart0.png)
+
+ctsn should have the name UART0
+_ctsn
+
+rtsn should have the name UART0_rtsn
+
+sin should have the name UART0_rxd
+
+sout should have the name UART0_txd
+
+Repeat this process for UART1 16550 block.
+
+![classes](./UART1.png)
+
+sin should have the name UART1_rxd
+
+sout should have the name UART1_txd
+
+Finally the last step would be to connect the ip2intc_irpt from both the UART 16550 to the concat blocks like the following.
+
+![classes](./interupt.png)
+
+The dout should be connected to pl_ps_irq0
+
+![classes](./concat_res.png)
+
+Finally, create a new constraint file as shown previously and adding the following constraints.
+
 
 ```vhdl
 set_property IOSTANDARD LVCMOS18 [get_ports UART*]
@@ -154,6 +244,7 @@ set_property PACKAGE_PIN B7 [get_ports BT_ctsn]
 #BT_HCI_CTS on FPGA / emio_uart0_rtsn
 set_property PACKAGE_PIN B5 [get_ports BT_rtsn]
 ```
+Then click generate bitstream like shown previously to generate the overlay.
 
 Done
 
