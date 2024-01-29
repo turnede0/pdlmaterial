@@ -173,7 +173,7 @@ To Map the UART pins, first expand the UART icon on the UART 16550 block like yo
 
 Then make external the following pins.
 
-![classes](./UART0.png)
+![classes](./0.png)
 
 ctsn should have the name UART0
 _ctsn
