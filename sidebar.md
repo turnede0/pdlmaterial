@@ -15,3 +15,5 @@
 - [Vitis-AI](Vitis-AI/)
 - [PYNQ-DPU](PYNQ-DPU/)
 - [VM-SETUP](VM_set/)
+- [I/O](IO/)
+- [YOLO Training](YOLO/)
