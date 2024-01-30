@@ -95,10 +95,12 @@ In order to start coding your first program in python, follow the following step
 
 6. save it in the `basics` folder
 7. Type the following code
+
 ```python
-name = "hello"
-print(name)
+name = "hello" # strings are a type of data type and require "" in this case "hello" 
+print(name) # print statement outputs the data stored inside name which is a variable
 ```
+
 8. Save the file with `Ctrl  S` or `file save`
 9. Run the code using the following method:
    - use the terminal built in VScode
@@ -135,9 +137,14 @@ You may ignore warnings as long as it does not affect the functionality of the l
 Variables can be created and assigned values in Python using the assignment operator `=`. To assign a word or string, enclose it in either double quotes (`" "`) or single quotes (`' '`). The `print()` function is used to display the output. From earlier:
 
 ```python
-name = "hello"
+name = "hello" 
 print(name)
 ```
+
+### remember 
+
+variable on the left of equal sign `=` data type on the right of equal sign
+
 ## Variables in Python
 
 In Python, variables are used to store and manipulate data. They act as placeholders for values that can change during the execution of a program. Here are some key points to understand about variables in Python:
@@ -147,19 +154,19 @@ In Python, variables are used to store and manipulate data. They act as placehol
 Variables in Python are declared by assigning a value to them using the assignment operator (`=`). For example:
 
 ```python
-age = 25 # int
-name = "John" # string
-old = False # boolean
-time = 22.4 # float
+age = 25 # int is a number with no decimal
+name = "John" # string 
+old = False # boolean is either True or False
+time = 22.4 # float Is a number with decimals
 ```
-Strings and Other Variable Types
+Strings and Other Data Types
 
-Strings are sequences of characters in Python. They can be assigned by enclosing the text in quotes. Other variable types include integers, floats, booleans, and lists. In Python, integers and floats can be automatically assigned. Comments in Python are indicated using the # symbol.
+Strings are sequences of characters in Python. They can be assigned by enclosing the text in quotes. Other Data types include integers, floats, booleans, and lists. In Python, integers and floats can be automatically assigned. Comments in Python are indicated using the # symbol.
 
 Example with a list:
 
 ```python
-food = ["Pizza", "Noodles", "Pasta"] #list
+food = ["Pizza", "Noodles", "Pasta"] #list with strings inside
 print(food[0])
 ```
 In this case to access an element from the list, we type the variable name followed by [index] where index allows us to control which element we want to retrieve
@@ -173,9 +180,21 @@ Also the default value of a variable is `None`
 If you want to check if a variable is None you can use a if statement
 
 ```python
-result = None
-if result is None:
+result = None # None is a special it assigns a variable to be a None type
+if result is None: 
     print("No result availiable")
+```
+### is operator 
+
+checks whether they refer to the same variable/object e.g.
+
+```python
+a = [1, 2, 3]
+b = a
+c = [1, 2, 3]
+
+print(a is b)  # True, a and b refer to the same list object
+print(a is c)  # False, a and c are different list objects, even though they have the same values
 ```
 
 ### Input and Output
@@ -183,8 +202,8 @@ As seen earlier if you want to print something out to the user you use the `prin
 To do so you can use the `input()` function but make sure to assign the correct data type based on what you expect to be inputted
 
 ```python
-number = input("Enter a number")
-print(number)
+number = input("Enter a number") # Will wait for something to be typed in by a user
+print(number) #Prints the number out
 ```
 
 this allows you to take inputs from the user if required
@@ -214,21 +233,21 @@ Otherwise you won't buy anything
 
 Here's a completed version of the above example
 ```python
-food = ["chocolate", "candy"]
-money = 2
-price_of_chocolate = 6
-price_of_candy = 4
-likecandy = True
-if(money>=price_of_chocolate):
-    numberchocolate = int(money/price_of_chocolate)
-    money_left = money - price_of_chocolate*numberchocolate
-    print("I bought " + str(numberchocolate) + " " + food[0])
-    print("I have " + str(money_left) + " dollar left")
-elif(likecandy and money>= price_of_candy):
-    numbercandy = int(money/price_of_candy)
-    money_left = money - price_of_candy*numbercandy
-    print("I bought " + str(numbercandy) + " Candy")
-else:
+food = ["chocolate", "candy"] # a list with 2 strings
+money = 2 # an int 2
+price_of_chocolate = 6 # an int
+price_of_candy = 4 # an int
+likecandy = True # a bool
+if(money>=price_of_chocolate): # if statement uses >= operator returns T if bigger or equal 
+    numberchocolate = int(money/price_of_chocolate) # converts float to int after division
+    money_left = money - price_of_chocolate*numberchocolate # remember multiply then subtract
+    print("I bought " + str(numberchocolate) + " " + food[0]) # advanced printing use + to add 2 strings together and make sure to convert ints into string
+    print("I have " + str(money_left) + " dollar left")# advanced printing use + to add 2 strings together and make sure to convert ints into string
+elif(likecandy and money>= price_of_candy): # if stament is false checks if both likecandy and money>=price are True
+    numbercandy = int(money/price_of_candy) # converts float to int after division
+    money_left = money - price_of_candy*numbercandy # remember multiply then subtract
+    print("I bought " + str(numbercandy) + " Candy") # advanced printing use + to add 2 strings together and make sure to convert ints into string
+else: #elif statement is false
     print("I bought nothing")
 ```
 
@@ -247,8 +266,9 @@ To print multiple words we can use the `+` to link 2 strings together
 The following operators are what allows you to set the conditions in if statements as well as variables
 
 - `+`, `-`, `*`, `/`, `//`, `%` are used for calculations.
-- `>`, `>=`, `<`, `<=`, `==`, `!=` are used for comparisons.
+- `>`, `>=`, `<`, `<=`, `==`, `!=` are used for comparisons if two variables have the same value
 - `and`, `or`, `not` are used to compare boolean values.
+-  `is`, `is not`  checks if two variables refer to the same or different object in memory
 
 For calculations:
 - `+` is used for addition.
@@ -298,17 +318,19 @@ For example:
 
 ```python
 i = 0
-while(i<10):
-    if (i ==5):
-        i+=1
-        continue
-    elif(i==8):
-        print(10)
-        break
-    else:
-        print(i)
-    print(" end of loop")
-    i += 1
+while(i<10): #1 checks the current value of i with 10 to go inside
+    if (i ==5): #2 checks if the value of i is equal to 5
+        i+=1    #3 adds 1 to i += is a shortcut instead of i = i + 1
+        continue #4 goes back to the 1st comment
+    elif(i==8): #5 checks if i is equal to 8  if comment 2 is false
+        print(10) # prints to the console 10
+        break # breaks out of the loop goes last comment
+    else: # if comment 5 is false
+        print(i) # prints the current value of i
+    i += 1 # adds 1 to i
+    print(" end of current loop") # prints the end of the current loop before going back to comment 1
+    
+# break leads to here any code below this will execute    
 ```
 So as seen in the example above, the control is i<10 but you can also use any of the other operators to change the logic if needed
 the if statement checks if 1 is equal to 5 if so it increases i by 1
@@ -332,9 +354,9 @@ The loop runs the code then increases the counter of i from 0 to 1 all the way t
 A coomon usage of for loops is to access lists in python
 
 ```python
-food = ["Pizza", "Pasta", "Noodles", "Chocolate", "Candy"]
-for i in range(len(food)):
-    print(food[i])
+food = ["Pizza", "Pasta", "Noodles", "Chocolate", "Candy"] # list with 5 strings
+for i in range(len(food)): # i will start from 0 to 4
+    print(food[i]) # prints the i+1 item in the list e.g. i = 0 prints Pizza which is the first item in the list
 ```
 
 In this example the `len` function gets the length of the list and the for loop prints every element inside the list without going out of range
