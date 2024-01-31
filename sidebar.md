@@ -3,6 +3,7 @@
 - [CV2_UI](new/)
 - [Image_Processing](Image_Processing/)
 - [Vivado](vivado_flow/)
+- [Custom_DPU](custom_dpu/)
 - [I/O](IO/)
 - [Ultra96](u96/)
 - [Ultra96(overlay)](overlay/)

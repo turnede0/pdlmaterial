@@ -59,20 +59,20 @@ Here's an example which combines the three functions into a1 program
 import cv2
 
 # Read the image
-image = cv2.imread('5.jpg')
+image = cv2.imread('4.jpg') # todo replace the string with the name of your image
 
 # Display the original image
-cv2.imshow('Original Image', image)
+cv2.imshow('Original Image', image) # Original Image is the title of the cv2 image variable is the image being displayed
 cv2.waitKey(0)
 
 # Convert the image to grayscale
-gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) #BGR2Gray is a cv2 function changing the colour scale to gray scale (different shades of black and white)
 
 # Write the grayscale image to a file
-cv2.imwrite('grey_5.jpg', gray_image)
+cv2.imwrite('grey_4.jpg', gray_image) # writes a file with variable gray_image and gives it a name grey_5.jpg
 
 # Display the grayscale image
-cv2.imshow('Grayscale Image', gray_image)
+cv2.imshow('Grayscale Image', gray_image) # Grayscale Image is the title of the cv2 image variable is the gray_image being displayed
 cv2.waitKey(0)
 
 # Close all windows
@@ -104,8 +104,8 @@ import cv2
 image = cv2.imread("3.jpg")
 
 #get the height and width
-height, width = image.shape[:2]
-resized_image = cv2.resize(image, (int(width/2), int(height/2)))
+height, width = image.shape[:2] # a image has 3 dimension height width and rgb scale
+resized_image = cv2.resize(image, (int(width/2), int(height/2))) # cv2.rezie needs int so we convert the divided amount to an int to avoid errors
 # Display the adjusted image
 cv2.imshow('Adjusted Image', adjusted_image)
 
@@ -133,9 +133,19 @@ for example [1:45] this means we access elements 1 all the way to element 44
 To use this to crop images, you can try the following code
 
 ```python
+import cv2
+image = cv2.imread("3.jpg")
+
 # Crop a region of interest (ROI) from the image
-x, y, w, h = 100, 100, 200, 200
-cropped_image = image[y:y+h, x:x+w]
+x, y, w, h = 100, 100, 200, 200 # try changing these numbers and see the output image
+cropped_image = image[y:y+h, x:x+w] # make sure your values are in the range of your image pixels
+
+# Display the adjusted image
+cv2.imshow('Cropped_Image', cropped_image)
+
+cv2.waitKey(0)  # Wait until a key is pressed
+cv2.destroyAllWindows()
+
 ```
 
 Here, the 100 to 299 pixels are removed out from the width and height respectively to result in an image of 300x300 pixels
@@ -160,19 +170,19 @@ Here is a sample code on how to execute it
 import cv2
 
 # Read the image
-image = cv2.imread('install_python.png')
+image = cv2.imread('4.jpg') # make sure you modify this to your image if needed
 
 # Get the image dimensions
-height, width = image.shape[:2]
+height, width = image.shape[:2] # we learned this earlier
 
 # Define the rotation angle in degrees
-angle = 180
+angle = 180 # try changing this and see the result
 
 # Define the rotation center
-center = (width / 2, height / 2)
+center = (width / 2, height / 2) # You can try to modify this as well
 
 # Calculate the rotation matrix
-rotation_matrix = cv2.getRotationMatrix2D(center, angle, 1)
+rotation_matrix = cv2.getRotationMatrix2D(center, angle, 1) # try changing 1 to another integer see the result
 
 # Apply the affine transformation
 rotated_image = cv2.warpAffine(image, rotation_matrix, (width, height))
@@ -207,22 +217,22 @@ import cv2
 import numpy as np
 
 # Create a blank image
-image = np.zeros((400, 400, 3), dtype=np.uint8)
+image = np.zeros((400, 400, 3), dtype=np.uint8) # 400x400x3 pixels
 
 # Draw a line
-cv2.line(image, (50, 50), (350, 50), (0, 255, 0), 2)
+cv2.line(image, (50, 50), (350, 50), (0, 255, 0), 2) # start point is (50,50) end is (350,50) colour is (0,255,0) 2 is the thickness of the line
 
 # Draw a rectangle
-cv2.rectangle(image, (50, 100), (200, 250), (0, 0, 255), 3)
+cv2.rectangle(image, (50, 100), (200, 250), (0, 0, 255), 3) # starting corner bottom left (50,100) end corner top right (200,250) , colour (0,0,255), thickness 3
 
 # Draw a filled rectangle
-cv2.rectangle(image, (250, 100), (350, 250), (0, 0, 255), -1)
+cv2.rectangle(image, (250, 100), (350, 250), (0, 0, 255), -1) # starting corner bottom left (250,100) end corner top right (300,250) , colour (0,0,255), fills the rectangle with the color
 
 # Draw a circle
-cv2.circle(image, (150, 300), 50, (255, 0, 0), 2)
+cv2.circle(image, (150, 300), 50, (255, 0, 0), 2) # center (150,300) 50 is the radius, (255,0,0) is the colour 2 is the thickness
 
 # Draw a filled circle
-cv2.circle(image, (300, 300), 50, (255, 0, 0), -1)
+cv2.circle(image, (300, 300), 50, (255, 0, 0), -1) # center (150,300) 50 is the radius, (255,0,0) is the colour, -1 is to fill the circle
 
 # Draw a filled polygon
 points = np.array([[50, 350], [150, 350], [200, 300], [250, 350], [350, 350]], np.int32)
@@ -275,6 +285,7 @@ It has the following parameters:
 
 - the input `image`
 - the center coordinates `(x,y)` of the circle
+- the radius of the circle
 - the `colour` in b g r
 - the thickness of the line `int > 0` or fill the rectangle `-1`
 
@@ -379,12 +390,12 @@ Here is the python code which is inside the function
 
 ```python
 def add_text(image, text, position, font_size, color, font_path):
-        font = ImageFont.truetype(font_path, font_size)
-        image_pil = Image.fromarray(image)
-        draw = ImageDraw.Draw(image_pil)
-        draw.text(position, text, font=font, fill=color)
-        image = np.array(image_pil)
-        return image
+        font = ImageFont.truetype(font_path, font_size) # this helps add the custom font
+        image_pil = Image.fromarray(image) # converts to the correct format for this lib 
+        draw = ImageDraw.Draw(image_pil) # drawing tool
+        draw.text(position, text, font=font, fill=color) #draws the text
+        image = np.array(image_pil) # converts back to the cv2 format
+        return image # gives back the processed image
 ```
 
 Inside the function, we first load the font using `ImageFont.truetype`
@@ -412,26 +423,26 @@ To load a Gif, we will be using Imageio.get_reader
 
 ```python
 gif_path = 'path/to/gif/file.gif' #Make sure to replace the path
-gif_reader = imageio.get_reader(gif_path)
+gif_reader = imageio.get_reader(gif_path) # reads the gif
 ```
 
 Also we will setup the Window settings using opencv
 
 ```python
 # Set up the UI window
-window_name = 'Animated UI'
+window_name = 'Animated UI' 
 cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
-cv2.setWindowProperty(window_name, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+cv2.setWindowProperty(window_name, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN) # additional window properties
 ``` 
 
 Now that we have set up the gif reader, we need to define the frame and animation properties
 
 For example:
 ```python
-frame_index = 0
+frame_index = 0 
 frame_count = len(gif_reader)
 animation_fps = 30
-animation_delay = int(1000 / animation_fps)
+animation_delay = int(1000 / animation_fps) # frame information
 ```
 In the above code, we keep track of the current frame and number of frames in the gif
 
@@ -542,7 +553,7 @@ import imageio
 import os
 from PIL import ImageFont, ImageDraw, Image
 
-def add_text(image, text, position, font_size, color, font_path):
+def add_text(image, text, position, font_size, color, font_path): # our custom function to add text 
         font = ImageFont.truetype(font_path, font_size)
         image_pil = Image.fromarray(image)
         draw = ImageDraw.Draw(image_pil)
@@ -553,7 +564,7 @@ def add_text(image, text, position, font_size, color, font_path):
 gif_path = '5.gif' #Make sure to replace the path
 gif_reader = imageio.get_reader(gif_path)
 
-image_path = "3.jpg"
+image_path = "3.jpg" # for demo purposes we will use an image but later on you can use a camera stream to do this also
 image = cv2.imread(image_path)
 
 # Set up the UI window

@@ -92,7 +92,11 @@ In this case we will be using tensorflow2
 conda activate vitis-ai-tensorflow2
 ```
 
-Then make sure you are in the correct directory and add the AI model, calibration_dataset and qauntization script.
+Then make sure you are in the correct directory and add the AI model, calibration_dataset and quantization script.
+
+Here is what it should look like
+
+![classes](./dir.png)
 
 ## Quantizing your tensorflow model
 
@@ -152,3 +156,4 @@ vai_c_tensorflow2 - m "yolov3.h5" -a "arch.json" -n "yolov3_new_tiny"
 ```
 
 There are some options which will not be covered.
+
