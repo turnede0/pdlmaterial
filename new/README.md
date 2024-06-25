@@ -106,8 +106,8 @@ image = cv2.imread("3.jpg")
 #get the height and width
 height, width = image.shape[:2] # a image has 3 dimension height width and rgb scale
 resized_image = cv2.resize(image, (int(width/2), int(height/2))) # cv2.rezie needs int so we convert the divided amount to an int to avoid errors
-# Display the adjusted image
-cv2.imshow('Adjusted Image', resized_image)
+# Display the resized image
+cv2.imshow('Resized Image', resized_image)
 
 cv2.waitKey(0)  # Wait until a key is pressed
 cv2.destroyAllWindows()
