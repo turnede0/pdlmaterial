@@ -3,6 +3,7 @@
 ## Introduction
 
 This document provides a step-by-step guide on using Python to write code, assign variables, perform operations, use control statements, loops, and functions. It also covers the basics of working with strings, integers, floats, and lists. 
+[Material for this session](https://stemturnede.sharepoint.com/:u:/g/EY0JJim44ohKldBPsN8-jMEBcMz7OuBmYkO41SlA18FwKw?e=xSyq20)
 
 ## Installing Python
 

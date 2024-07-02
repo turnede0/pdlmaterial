@@ -3,6 +3,7 @@
 # Filtering in Image Processing
 
 Filtering is a fundamental operation in image processing that involves modifying the pixels of an image to achieve desired effects such as noise reduction, edge detection, or image enhancement.
+[Material for this session](https://stemturnede.sharepoint.com/:u:/g/EULXb62uu1dBjEOB8kQsvCwBFOABUB0m6HI7jauE5FemWw?e=IQE6Fm)
 
 ## How Filtering Works
 
@@ -74,7 +75,7 @@ Example:
 ```python
 import cv2
 
-image = cv2.imread('3.jpg)
+image = cv2.imread('3.jpg')
 bilateral = cv2.bilateralFilter(image, 9, 75, 75)
 cv2.imshow('Bilateral Filter', bilateral)
 
