@@ -1,4 +1,4 @@
-# Introduction
+<!-- # Introduction
 
 
 
@@ -51,4 +51,7 @@ Gets you notified when new versions of your Docker containers are available and 
 <a href="https://www.buymeacoffee.com/61rUNMm" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 ## License
-This project is licensed under the [MIT license](https://github.com/fmartinou/whats-up-docker/blob/master/LICENSE).
+This project is licensed under the [MIT license](https://github.com/fmartinou/whats-up-docker/blob/master/LICENSE). -->
+ # Introduction to AMD X Avnet Certificate Course
+This course is a implementing a Computer Vision application in AMD X Avnet MPSoC Board: Ultra96
+![image](course_outline.png)
