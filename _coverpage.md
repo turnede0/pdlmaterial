@@ -1,5 +1,5 @@
-![logo](HKAGE_logo.png)
-![logo](Semtron logo Gery.svg)
+![logo](HKAGE logo.png)
+<!-- ![logo](Semtron logo Gery.svg) -->
 
 <!-- # **Competiton Material** -->
 
