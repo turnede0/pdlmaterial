@@ -1,4 +1,4 @@
-![logo](./HKAGE_logo.png)
+![logo](./semtron_logo.png_)
 <!-- ![logo](Semtron logo Gery.svg) -->
 
 <!-- # **Competiton Material** -->
