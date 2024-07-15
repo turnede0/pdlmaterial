@@ -1,6 +1,7 @@
 - [Introduction](introduction/)
 - [Basics](basics/)
 - [CV2_UI](new/)
+- [FPGA](introduction_to_FPGA/)
 - [Image_Processing](Image_Processing/)
 - [Vivado](vivado_flow/)
 - [Custom_DPU](custom_dpu/)
