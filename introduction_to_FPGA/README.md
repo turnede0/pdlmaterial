@@ -2,7 +2,7 @@
 # Introduction to FPGA
 
   
-## Digital Circuit
+## Introduction to Circuit
 Electronic Circuit in general can be divided into 2 main catogories: analogue circuit and digital circuit.
 ### Analogue circuit
 An analog circuit processes and manipulates **continuous** electronic signals, uses components such as resistors, capacitors, inductors and transistors.
@@ -11,35 +11,49 @@ Example: Power modules, Amplifier, Radio Frequency Circuit
 
 ### Digital circuit
 A digital circuit processes **discrete** signals represented by binary digits (0s and 1s)
-It uses components such as logic gates, flip-flops, and registers, which is alos mainly contrusted by multiple transistors.
+It uses components such as logic gates, flip-flops, and registers, which is alos mainly contrusted by transistors.
 
-Example: Microprocessor, Digital Signal Processor, Graphical Processing Unit, Programmable Logic Device
+Example: Microprocessor, Digital Signal Processor, Graphical Processing Unit(GPU), Programmable Logic Device
 
 In this course, we will focus mainly on digital circuit.
+## Foundation of Integrated Circuit - Transistor 
+Transistors are semiconductor devices used to amplify or switch electronic signals and electrical power. There are two commonly used transistors: Bipolar Junction Transistor(BJT) and Metal-Oxide-Semiconductor Field-Effect Transistor(MOSFET). 
+
+Imagine you are going to build a switch circuit. Surely you can use a mechanical switch. However, Presses are required for activating or deactivating the circuit. What if pressing is not allowed or compatible in your application sceranio(e.g. the switch circuit implemented underground)?
+
+By using transistor, we can create a electrical signal controlled "switch" circuit. The following example is done by a NPN BJT.
+Example: An opened "switch"
+![Transistor as a Switch - Using Transistor Switching](https://www.electronics-tutorials.ws/wp-content/uploads/2013/09/tran46.gif)
+Example: A closed "switch"
+![transistor switch in saturation](https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/transistor-tran47.gif)
+
+By using transistor, we can build amplifier circuit, which is the basis of **Anlogue Intergrated Circuit** , or switch circuit, which is the basis of **Digital Integrated Circuit**. 
+
+We use multiple transistors to form differents kinds of digital logic gates, which are the basic building block from which all digital circuits and microprocessor based systems.
+![Digital Logic Gates | Using Individual Transistors](https://www.gsnetwork.com/wp-content/uploads/2023/01/digital-logic-gates-symbols-and-truth-tables.jpg)
+Example: An AND gate circuit implemented by 2 NPN BJT
+![Logic AND Gate Tutorial with Logic AND Gate Truth Table](https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/logic-log43.gif)
+
 
 ## Development of Integrated Circuit
 
-The advancement of Integrated Circuit and Chip can be easily illustrated by the Scale of Integration. Meaning, to fit more and more transistor into a defined surface area. 
+The development of Integrated Circuit and Chip can be easily illustrated by the **Scale of Integration**, meaning to distinguish how many transistors can be fitted into a defined surface area on a semiconductor material. 
 
-### SSI Small-Scale Integration
-### MSI Medium Scale Integration
-### LSI Large-Scale Integration
-### VLSI Very Large-Scale Integration
-### ULSI Ultra Large-Scale Integration
-### GSI Giga-Scale Integration
+| Scale of Integration |Name    |   Year  | Transistor count  | Logic gates number | Example|
+|---|---|---|---|---|---|
+| SSI| _small-scale integration_  | 1964  |   1 to 10 |  1 to 12 | Flip-Flops|
+| MSI  | _medium-scale integration_  |  1968 | 10 to 500  |   13 to 99  |Counters|
+| LSI |_large-scale integration_  |    1971 | 500 to 20 000  |  100 to 9999|Intel 4004(First mircroprocessor)|
+|VLSI|_very large-scale integration_ |1980|20 000 to 1 000 000|10 000 to 99 999|System on Chip(SoC)|
+|ULSI|_ultra-large-scale integration_|1984|1 000 000 and more|100 000 and more|AMD Ryzen 9|
 
-## Digital IC
 
-## General Purpose Processor 
-CPU and GPU, MCU
-
-## Application Specific Integrated Circuit(ASIC)
-Digital Signal Processor
 
 ## Programmable Logic Device(PLD)
+Programmable Logic Device are digital IC with numerous digital logic gates built in. Engineers and developers can design and program the digital logic inside it using **Hardwawre Description Language**.
 
 ### Read-Only Memory(ROM)
-Before logic array IC, engineer tried to use ROM to represent combinational logic circuit. Electrically Erasable Programmable ROM(EEPROM) is commonly used. However, using memory device to represent digital logic circuit is slow. Thus, array circuit built by numerous interconnected logic gates is widely used for PLD instead.
+Before digital logic array IC, engineer tried to use ROM to represent combinational logic circuit. Electrically Erasable Programmable ROM(EEPROM) was commonly used. However, using memory device to represent digital logic circuit is slow and cost-ineffective. Thus, array circuit built by numerous interconnected logic gates is widely used for PLD instead.
 
 ### Programmable Logic Array(PLA) and Programmable Array Logic(PAL)
 Both PLA and PAL consist of an AND Array and an OR Array.
@@ -56,10 +70,11 @@ Difference is:
 PAL or PLA can be programmed by antifuse technology(irreversible) or EEPROM.
 
 
-## Field Programmable Gate Array FPGA
+## Field Programmable Gate Array (FPGA)
+![FPGA Design, Architecture and Applications (Updated) [2024]](https://www.logic-fruit.com/wp-content/uploads/2021/12/FPGA-Graphics-1.jpg.webp)
+Based on PAL and PLA, FPGA is developed to fulfil more complex and large scale digital circuit appplication. The key feature of FPGA is "field", which means the digital circuit design can be reprogrammed outside factory, which give us greater flexible and agile in utilizing it. 
 
-Based on PAL and PLA, FPGA is developed to fulfil more complex and large scale digital circuit appplication. The key feature of FPGA is "field", which means the digital circuit design can be reprogrammed outside factory, which give us greater flexible and agile in utilizing it.
-
+### Structure of a FPGA
 1.  Logic Blocks:
     ![classes](./CLB.png)
     -   FPGAs consist of a large number of configurable logic blocks (CLBs) that can be interconnected to implement various logic functions. Each CLB typically contains Lookup Tables(LUTs), flip-flops, and multiplexers.
@@ -80,12 +95,51 @@ Based on PAL and PLA, FPGA is developed to fulfil more complex and large scale d
 6.  Embedded RAM and DSP Blocks (Optional):
     
     -   Some FPGAs include embedded memory blocks and digital signal processing (DSP) blocks to provide additional functionality for specific applications that require memory or digital signal processing capabilities. 
+ 
+## Application Specific Integrated Circuit(ASIC)
+Unlike PLA and FPGA that can be prgrammed to meet a variety use case requirements after manufacturing, ASIC designs are tailored early in the design process to address specific needs. ASIC is expensive, consume many time to develop and manufacture, thus are only used in very specific and dedeicated task in an electronic system.
+
+It is very common for the chip engineers to use FPGA to test and evaluate a ASIC design before manufacutring the acutal ASIC.
+
+Example: Targeted AMD ASIC dedeicated for Interactive Streaming
+![AMD Rolls Out 5 nm ASIC-based Accelerator for the Interactive Streaming Era  - News](https://www.allaboutcircuits.com/uploads/articles/AMD_5nm_ASIC_based_NAB_chip_BIG.jpeg)
+
+## General Purpose Processor 
+Central Processing Unit (CPU), Microcontroller Unit (MCU) and Microprocessor are the common general purpose processors, 
+
+Unlike PLDs, General purpose processor is designed to running large variety of general instructions to cater to the most number of scenarios as possible. Thus, many logic gates are complied together  to form defined function blocks, such as **Control Unit**(CU), **Arthmetic Logic Unit**(ALU), **Registers**.
+
+### Working Process of General Purpose Processor 
+![Organization of Computer Systems: Processor & Datapath](https://www.cise.ufl.edu/~mssz/CompOrg/Figure4.8-MIPSdatapathLodStr.gif)
+#### 1.  **Fetch**
+
+-   The Control Unit (CU) retrieves ("fetches") the next instruction to be executed from the main memory (RAM) and places it into the Instruction Register (IR).
+-   The address of the instruction is stored in the Program Counter (PC), which is then incremented to point to the next instruction.
+
+#### 2.  **Decode**
+
+-   The fetched instruction is sent to the Instruction Decoder within the Control Unit.
+-   The Control Unit interprets the instruction to understand what operation is to be performed and which resources are required.
+
+#### 3.  **Execute**
+
+-   The decoded instruction is sent to the appropriate part of the CPU. For instance, if it’s an arithmetic operation, it will be sent to the ALU.
+-   The required data is fetched from the registers or memory.
+-   The ALU performs the required operation (addition, subtraction, logical operations, etc.).
+-   The result of the operation is stored back in a register or memory.
+
+#### 4.  **Write Back**
+
+-   The result of the execution stage is written back to the appropriate place, such as a register or a memory location.
+-   This step updates the status registers and flags (like zero, carry, overflow) based on the result of the operation.
+
 
 ##  Comparison between different Digital IC
 
 ![FPGAs, Deep Learning, Software Defined Networks and the Cloud: A Love Story  Part 1 | by Jamal Robinson | Medium](https://miro.medium.com/v2/resize:fit:1400/1*ROC6Psob0nLEMZ1igILpwA.png)
 All the abovementioned digital IC can be compared in 2 parameters: Flexibility and Efficency.
-As mentioned before, general processor (CPU and GPU)'s archieture is designed to running large variety of general instructions to cater to the most number of scernios as possible. Such design is less efficient.
+As mentioned before, general purpose processor's archieture is designed to running large variety of general instructions to cater to the most number of scernios as possible. However, many steps are required for running a task in a general purpose processor , resulted in an efficiency bottleneck. 
+FPGA and ASIC on the other hand, can be designed for specific repetitive application or task in a very efficient way. 
 
 ## Multiprocessor System-on-Chip(MPSoC)
 Multiprocessor System-on-Chip is a technology to integrate general processor(CPU, GPU), FPGA and DSPs into one system chip. With dedicated architechure and software ecosystem, engineers and developers can allow different cores to cooperate with each other. General processors can give those repetitive tasks to dedicated core, such as FPGA and GPU, such that they can accelerate the task. Thus, the whole system can work in faster speed and greater efficiency.
