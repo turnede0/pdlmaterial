@@ -191,7 +191,13 @@ In your browser, connect to http://192.168.3.1/. Enter Login password: **xilinx*
 
 ## Using Juypter Notebook in PYNQ
 
-Juypter Notebook is used as the GUI IDE for PYNQ. Juypter Notebook support running Python Script and Linux terminal. 
+Juypter Notebook is used as the GUI IDE for PYNQ. Juypter Notebook support running Python notebook and Linux terminal. 
 ![classes](./jupyter.png)
 
-###Open and Run a Displayport example Script
+### Open and Run a Displayport example notebook 
+1. Connect MiniDisplayport to DP-to-HDMI convertor, HDMI cable and HDMI Video Capture card
+2. Connect HDMI Video Capture card to your computer's USB port
+3. Open "common" folder
+
+### Using Linux Terminal in Juypter Notebook in PYNQ
+
