@@ -4,6 +4,8 @@
   
 ## Introduction to Electronic Circuit
 Electronic Circuit in general can be divided into 2 main catogories: analogue circuit and digital circuit.
+
+![School electronic: Difference between Analog and Digital circuits](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvywgcV4LYdufLiolPm5zDeKMtEH7wLQMDD2LGe_KXqMvzY7PTt-pWmW9zlVjX_OQiINitBKjcBGtqU3tvJbqRbdVWN0dMfBoUTA8yjYstEWoHSOo_T8cfg5J_sT3zXL9IDGonfnRYuOQ/s1600/s.jpg)
 ### Analogue circuit
 An analog circuit processes and manipulates **continuous** electronic signals, uses components such as resistors, capacitors, inductors and transistors.
 
@@ -31,10 +33,10 @@ Imagine you are going to build a simple switch circuit. Surely you can use a mec
 
 By using transistor, we can create an electrical signal controlled "switch" circuit. The following example is done by a NPN BJT.
 
-Example: An opened "switch"
+Example: An opened "switch" implemented by NPN BJT
 ![Transistor as a Switch - Using Transistor Switching](https://www.electronics-tutorials.ws/wp-content/uploads/2013/09/tran46.gif)
 
-Example: A closed "switch"
+Example: A closed "switch" implemented by NPN BJT
 ![transistor switch in saturation](https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/transistor-tran47.gif)
 
 By using transistor, we can build amplifier circuit, which is the basis of **Anlogue Intergrated Circuit** , or switch circuit, which is the basis of **Digital Integrated Circuit**. 
@@ -192,12 +194,37 @@ In your browser, connect to http://192.168.3.1/. Enter Login password: **xilinx*
 ## Using Juypter Notebook in PYNQ
 
 Juypter Notebook is used as the GUI IDE for PYNQ. Juypter Notebook support running Python notebook and Linux terminal. 
-![classes](./jupyter.png)
-
+![class](https://imgur.com/C0vT626.png)
 ### Open and Run a Displayport example notebook 
 1. Connect MiniDisplayport to DP-to-HDMI convertor, HDMI cable and HDMI Video Capture card
-2. Connect HDMI Video Capture card to your computer's USB port
-3. Open "common" folder
+2. Connect HDMI Video Capture card to **your computer's** USB port
+3. Connect the Webcam to **Ultra96's** USB port
+4. Open "common" folder
+5. In "common" folder, open "display_port_introduction.ipynb" notebook
+![Imgur](https://imgur.com/FZDMTYC.png)
+6. Make sure you connect everything properly and open the "Camera" application in your computer.
+![Imgur](https://imgur.com/4kXYJsH.png)
+
+8. Run the whole notebook to display camera output to your computer
+![Imgur](https://imgur.com/wwttGSc.png)
 
 ### Using Linux Terminal in Juypter Notebook in PYNQ
-
+Go back to Homepage. Initialize a new terminal by pressing New > Terminal.
+![Imgur](https://imgur.com/NbkQppz.png)
+![Imgur](https://imgur.com/vy7DCOa.png)
+### Common Linux Command
+1.  `ls`: Lists the contents of a directory.
+2.  `cd`: Changes the current working directory.
+3.  `mkdir`: Creates a new directory.
+4.  `rm`: Removes (deletes) files or directories.
+5.  `cp`: Copies files or directories.
+6.  `mv`: Moves or renames files or directories.
+7.  `cat`: Displays the contents of a file.
+8.  `nano`: A text editor for editing files.
+9.  `ssh`: Connects to a remote machine via Secure Shell (SSH).
+10.  `chmod`: Changes the permissions of a file or directory.
+11.  `sudo`: Executes a command with superuser (administrative) privileges.
+12.  `grep`: Searches for a pattern in a file or output.
+13.  `top`: Displays the running processes and their system resource usage.
+14.  `apt-get`: The package manager for Debian-based Linux distributions (e.g., Ubuntu).
+15.  `systemctl`: Manages system services (start, stop, enable, disable).
