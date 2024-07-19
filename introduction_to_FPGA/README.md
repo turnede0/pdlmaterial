@@ -1,23 +1,24 @@
 
+
 # Introduction to FPGA
 
   
 ## Introduction to Electronic Circuit
-Electronic Circuit in general can be divided into 2 main catogories: analogue circuit and digital circuit.
+Electronic circuits in general can be divided into 2 categories: analog circuits and digital circuits.
 
 ![School electronic: Difference between Analog and Digital circuits](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvywgcV4LYdufLiolPm5zDeKMtEH7wLQMDD2LGe_KXqMvzY7PTt-pWmW9zlVjX_OQiINitBKjcBGtqU3tvJbqRbdVWN0dMfBoUTA8yjYstEWoHSOo_T8cfg5J_sT3zXL9IDGonfnRYuOQ/s1600/s.jpg)
 ### Analogue circuit
-An analog circuit processes and manipulates **continuous** electronic signals, uses components such as resistors, capacitors, inductors and transistors.
+An analog circuit processes and manipulates **continuous** electronic signals using components such as resistors, capacitors, inductors, and transistors.
 
-Example: Power modules, Amplifier, Radio Frequency Appplication Circuit
+Example: Power modules, Amplifier, Radio Frequency Application Circuit
 
 ### Digital circuit
 A digital circuit processes **discrete** signals represented by binary digits (0s and 1s)
-It uses components such as logic gates, flip-flops, and registers, which is alos mainly contrusted by transistors.
+It uses components such as logic gates, flip-flops, and registers, which are also mainly constructed by transistors.
 
 Example: Microprocessor, Digital Signal Processor, Graphical Processing Unit(GPU), Programmable Logic Device
 
-In this course, we will discuss mainly on digital circuit.
+In this course, we will discuss mainly digital circuits.
 
 ## Common Circuit vs Integrated Circuit
 ![Difference Between Discrete Circuits And Integrated Circuits](https://www.elprocus.com/wp-content/uploads/2017/02/featuerd-image.png)
@@ -29,9 +30,9 @@ In this course, we will discuss mainly on digital circuit.
 Transistors are semiconductor devices used to amplify or switch electronic signals and electrical power. There are two commonly used transistors: Bipolar Junction Transistor(BJT) and Metal-Oxide-Semiconductor Field-Effect Transistor(MOSFET). 
 
 ![schoolphysics ::Welcome::](https://www.schoolphysics.co.uk/age11-14/Electricity%20and%20magnetism/Current%20electricity/text/Switches_/images/2.png)
-Imagine you are going to build a simple switch circuit. Surely you can use a mechanical switch. However, physical presses are required for activating or deactivating the circuit. What if pressing is not allowed or compatible in your application sceranio(e.g. the switch circuit implemented underground)?
+Imagine you are going to build a simple switch circuit. Surely you can use a mechanical switch. However, physical presses are required for activating or deactivating the circuit. What if pressing is not allowed or compatible in your application scenario (e.g. the switch circuit implemented underground)?
 
-By using transistor, we can create an electrical signal controlled "switch" circuit. The following example is done by a NPN BJT.
+By using a transistor, we can create an electrical signal-controlled "switch" circuit. The following example is done by an NPN BJT.
 
 Example: An opened "switch" implemented by NPN BJT
 ![Transistor as a Switch - Using Transistor Switching](https://www.electronics-tutorials.ws/wp-content/uploads/2013/09/tran46.gif)
@@ -39,9 +40,9 @@ Example: An opened "switch" implemented by NPN BJT
 Example: A closed "switch" implemented by NPN BJT
 ![transistor switch in saturation](https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/transistor-tran47.gif)
 
-By using transistor, we can build amplifier circuit, which is the basis of **Anlogue Intergrated Circuit** , or switch circuit, which is the basis of **Digital Integrated Circuit**. 
+By using a transistor, we can build an amplifier circuit, which is the basis of **Anlogue Integrated Circuit** , or a switch circuit, which is the basis of **Digital Integrated Circuit**. 
 
-We use multiple transistors to form differents kinds of digital logic gates, which are the basic building block from which all digital circuits and microprocessor based systems.
+We use multiple transistors to form different kinds of digital logic gates, which are the basic building blocks from all digital circuits and microprocessor-based systems.
 
 Example: An AND gate circuit implemented by 2 NPN BJT
 ![Logic AND Gate Tutorial with Logic AND Gate Truth Table](https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/logic-log43.gif)
@@ -49,7 +50,7 @@ Example: An AND gate circuit implemented by 2 NPN BJT
 
 ## Development of Integrated Circuit
 
-The development of Integrated Circuit and Chip can be easily illustrated by the **Scale of Integration**, meaning to distinguish how many transistors can be fitted into a defined surface area on a semiconductor material. 
+The development of integrated circuits and chips can be easily illustrated by the **Scale of Integration**, which distinguishes how many transistors can be fitted into a defined surface area on a semiconductor material. 
 
 | Scale of Integration |Name    |   Year  | Transistor count  | Logic gates number | Example|
 |---|---|---|---|---|---|
@@ -62,10 +63,10 @@ The development of Integrated Circuit and Chip can be easily illustrated by the 
 
 
 ## Programmable Logic Device(PLD)
-Programmable Logic Device are digital IC with numerous digital logic gates built in. Engineers and developers can design and program the digital logic inside it using **Hardwawre Description Language(HDL)**.
+Programmable Logic Devices are digital ICs with numerous digital logic gates built in. Engineers and developers can design and program the digital logic inside it using **Hardware Description Language(HDL)**.
 
 ### Read-Only Memory(ROM)
-Before digital logic array IC, engineer tried to use ROM to represent combinational logic circuit. Electrically Erasable Programmable ROM(EEPROM) was commonly used. However, using memory device to represent digital logic circuit is slow and cost-ineffective. Thus, array circuit built by numerous interconnected logic gates is widely used for PLD instead.
+Before the digital logic array IC, the engineer tried to use ROM to represent combinational logic circuits. Electrically Erasable Programmable ROM(EEPROM) was commonly used. However, using a memory device to represent digital logic circuits is slow and cost-ineffective. Thus, an array circuit built by numerous interconnected logic gates is widely used for PLD instead.
 
 ### Programmable Logic Array(PLA) and Programmable Array Logic(PAL)
 Both PLA and PAL consist of an AND Array and an OR Array.
@@ -79,12 +80,12 @@ Difference is:
 - In a PLA, both the AND and OR arrays are programmable.
 
 
-PAL or PLA can be programmed by **antifuse technology(irreversible)** or EEPROM.
+PAL or PLA can be programmed by **anti-fuse technology(irreversible)** or EEPROM.
 
 
 ## Field Programmable Gate Array (FPGA)
 ![FPGA Design, Architecture and Applications (Updated) [2024]](https://www.logic-fruit.com/wp-content/uploads/2021/12/FPGA-Graphics-1.jpg.webp)
-Based on PAL and PLA, FPGA is developed to fulfil more complex and large scale digital circuit appplication. The key feature of FPGA is "field", which means the digital circuit design can be reprogrammed outside factory, which give us greater flexible and agile in utilizing it. 
+Based on PAL and PLA, FPGA is developed to fulfill more complex and large-scale digital circuit applications. The key feature of FPGA is "field", which means the digital circuit design can be reprogrammed outside the factory, which gives us greater flexibility and agility in utilizing it. 
 
 ### Structure of a FPGA
 1.  Logic Blocks:
@@ -109,17 +110,17 @@ Based on PAL and PLA, FPGA is developed to fulfil more complex and large scale d
     -   Some FPGAs include embedded memory blocks and digital signal processing (DSP) blocks to provide additional functionality for specific applications that require memory or digital signal processing capabilities. 
  
 ## Application Specific Integrated Circuit(ASIC)
-Unlike PLA and FPGA that can be prgrammed to meet a variety use case requirements after manufacturing, ASIC designs are tailored early in the design process to address specific needs. ASIC is expensive, consume many time to develop and manufacture, thus are only used in very specific and dedeicated task in an electronic system.
+Unlike PLA and FPGA that can be programmed to meet a variety of use case requirements after manufacturing, ASIC designs are tailored early in the design process to address specific needs. ASIC is expensive, and consumes much time to develop and manufacture. Thus, it are only used in very specific and dedicated task in an electronic system.
 
-It is very common for the chip engineers to use FPGA to test and evaluate a ASIC design before manufacutring the acutal ASIC.
+It is very common for chip engineers to use FPGA to test and evaluate an ASIC design before manufacturing the acutal ASIC.
 
-Example: Targeted AMD ASIC dedeicated for Interactive Streaming
+Example: Targeted AMD ASIC dedicated for Interactive Streaming
 ![AMD Rolls Out 5 nm ASIC-based Accelerator for the Interactive Streaming Era  - News](https://www.allaboutcircuits.com/uploads/articles/AMD_5nm_ASIC_based_NAB_chip_BIG.jpeg)
 
 ## General Purpose Processor 
-Central Processing Unit (CPU), Microcontroller Unit (MCU) and Microprocessor are the common general purpose processors, 
+Central Processing Unit (CPU), Microcontroller Unit (MCU), and Microprocessor are the common general-purpose processors, 
 
-Unlike PLDs, General purpose processor is designed to running large variety of general instructions to cater to the most number of scenarios as possible. Thus, many logic gates are complied together  to form defined function blocks, such as **Control Unit**(CU), **Arthmetic Logic Unit**(ALU), **Registers**.
+Unlike PLDs, a General purpose processor is designed to run a large variety of general instructions to cater to the most number of scenarios as possible. Thus, many logic gates are compiled together to form defined function blocks, such as **Control Unit**(CU), **Arithmetic Logic Unit**(ALU), **Registers**.
 
 ### Working Process of General Purpose Processor 
 ![Organization of Computer Systems: Processor & Datapath](https://www.cise.ufl.edu/~mssz/CompOrg/Figure4.8-MIPSdatapathLodStr.gif)
@@ -151,14 +152,14 @@ Unlike PLDs, General purpose processor is designed to running large variety of g
 ![FPGAs, Deep Learning, Software Defined Networks and the Cloud: A Love Story  Part 1 | by Jamal Robinson | Medium](https://miro.medium.com/v2/resize:fit:1400/1*ROC6Psob0nLEMZ1igILpwA.png)
 All the abovementioned digital IC can be compared in 2 parameters: Flexibility and Efficency.
 
-As mentioned before, general purpose processor's archieture is designed to running large variety of general instructions to cater to the most number of scernios as possible. However, many steps are required for running a task in a general purpose processor, resulted in an efficiency bottleneck. 
+As mentioned before, general purpose processor's architecture is designed to run a large variety of general instructions to cater to the most number of scenarios as possible. However, many steps are required for running a task in a general-purpose processor, resulting in an efficiency bottleneck. 
 
-FPGA and ASIC on the other hand, can be designed for specific repetitive application or task in a very efficient way. 
+FPGA and ASIC on the other hand, can be designed for specific repetitive applications or task in a very efficient way. 
 
 ## Multiprocessor System-on-Chip(MPSoC)
-Multiprocessor System-on-Chip is a technology to integrate general processor(CPU, GPU), FPGA and DSPs into one system chip. With MPSoC, engineers and developers can allow different processor to cooperate with each other. General processos can assign repetitive tasks to a dedicated processor, such as FPGA and GPU, such that they can accelerate the task. Thus, the whole system can work in faster speed and greater efficiency.
+Multiprocessor System-on-Chip is a technology to integrate general processor(CPU, GPU), FPGA, and DSPs into one system chip. With MPSoC, engineers and developers can allow different processors to cooperate with each other. General processes can assign repetitive tasks to a dedicated processor, such as FPGA and GPU, such that they can accelerate the task. Thus, the whole system can work in a faster speed and greater efficiency.
 ### Key Application of MPSoC:
- AI and Machine Learning, Automatives, Telecommunication
+ AI and Machine Learning, Automotive, Telecommunication
   
 ## Zynq® UltraScale+™ MPSoC and Ultra96
 
@@ -170,7 +171,7 @@ Zynq® UltraScale+™ MPSoC is used in our main course hardware: Avnet Ultra96-V
 
 ## AMD Xilinx Vivado
 ![设计输入和实现](https://china.xilinx.com/content/xilinx/zh/products/design-tools/vivado/implementation/_jcr_content/root/parsysFullWidth/xilinxflexibleslab_1/xilinxflexibleslab-parsys/xilinxtabs/childParsys-methodology/xilinxcolumns_copy_c/childParsys-1/xilinximage.img.png/1697734151140.png)
-To design, implement and verify digital logic circuits for the Programmable Logic in Zynq® UltraScale+™ MPSoC or Xilinx FPGA , Xilinx Vivado design suite is primarily used. 
+To design, implement, and verify digital logic circuits for the Programmable Logic in Zynq® UltraScale+™ MPSoC or Xilinx FPGA, Xilinx Vivado design suite is primarily used. 
 ### Key Features and capabilities of the AMD Vivado
 1.  Integrated Design Environment (IDE):
 2.  High-Level Synthesis (HLS)
@@ -189,18 +190,18 @@ A great tool for prototyping and exploring FPGA designs using a high-level langu
 ## Initializing PYNQ on Ultra96
 Follow the documentation to connect Ultra96 to your computer:
 https://ultra96-pynq.readthedocs.io/en/latest/getting_started.html
-In your browser, connect to http://192.168.3.1/. Enter Login password: **xilinx** to start using Jupyter notebook.
+In your browser, connect to http://192.168.3.1/. Enter Login password: **xilinx** to start using Jupyter Notebook.
 
 ## Using Juypter Notebook in PYNQ
 
 Juypter Notebook is used as the GUI IDE for PYNQ. Juypter Notebook support running Python notebook and Linux terminal. 
 ![class](https://imgur.com/C0vT626.png)
 ### Open and Run a Displayport example notebook 
-1. Connect MiniDisplayport to DP-to-HDMI convertor, HDMI cable and HDMI Video Capture card
+1. Connect MiniDisplayport to DP-to-HDMI converter, HDMI cable, and HDMI Video Capture card
 2. Connect HDMI Video Capture card to **your computer's** USB port
 3. Connect the Webcam to **Ultra96's** USB port
 4. Open "common" folder
-5. In "common" folder, open "display_port_introduction.ipynb" notebook
+5. In the "common" folder, open "display_port_introduction.ipynb" notebook
 ![Imgur](https://imgur.com/FZDMTYC.png)
 6. Make sure you connect everything properly and open the "Camera" application in your computer.
 ![Imgur](https://imgur.com/4kXYJsH.png)
@@ -209,7 +210,7 @@ Juypter Notebook is used as the GUI IDE for PYNQ. Juypter Notebook support runni
 ![Imgur](https://imgur.com/wwttGSc.png)
 
 ### Using Linux Terminal in Juypter Notebook in PYNQ
-Go back to Homepage. Initialize a new terminal by pressing New > Terminal.
+Go back to the Homepage. Initialize a new terminal by pressing New > Terminal.
 ![Imgur](https://imgur.com/NbkQppz.png)
 ![Imgur](https://imgur.com/vy7DCOa.png)
 ### Common Linux Command
