@@ -22,6 +22,7 @@ In this course, we will discuss mainly digital circuits.
 
 ## Common Circuit vs Integrated Circuit
 ![Difference Between Discrete Circuits And Integrated Circuits](https://www.elprocus.com/wp-content/uploads/2017/02/featuerd-image.png)
+
 **Common circuit** is built using **discrete electronic components** like resistors, capacitors, transistors, and other components. These components are individually assembled and interconnected on a PCB (Printed Circuit Board) or breadboard.
 
 **Integrated circuit** or **Chip** is a **single semiconductor device** that integrates multiple electronic components, such as transistors, resistors, capacitors, and interconnections. ICs are fabricated using various semiconductor manufacturing processes, such as photolithography and chemical vapor deposition.
