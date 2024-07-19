@@ -7,6 +7,7 @@
 Electronic circuits in general can be divided into 2 categories: analog circuits and digital circuits.
 
 ![School electronic: Difference between Analog and Digital circuits](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvywgcV4LYdufLiolPm5zDeKMtEH7wLQMDD2LGe_KXqMvzY7PTt-pWmW9zlVjX_OQiINitBKjcBGtqU3tvJbqRbdVWN0dMfBoUTA8yjYstEWoHSOo_T8cfg5J_sT3zXL9IDGonfnRYuOQ/s1600/s.jpg)
+
 ### Analogue circuit
 An analog circuit processes and manipulates **continuous** electronic signals using components such as resistors, capacitors, inductors, and transistors.
 
@@ -31,14 +32,17 @@ In this course, we will discuss mainly digital circuits.
 Transistors are semiconductor devices used to amplify or switch electronic signals and electrical power. There are two commonly used transistors: Bipolar Junction Transistor(BJT) and Metal-Oxide-Semiconductor Field-Effect Transistor(MOSFET). 
 
 ![schoolphysics ::Welcome::](https://www.schoolphysics.co.uk/age11-14/Electricity%20and%20magnetism/Current%20electricity/text/Switches_/images/2.png)
+
 Imagine you are going to build a simple switch circuit. Surely you can use a mechanical switch. However, physical presses are required for activating or deactivating the circuit. What if pressing is not allowed or compatible in your application scenario (e.g. the switch circuit implemented underground)?
 
 By using a transistor, we can create an electrical signal-controlled "switch" circuit. The following example is done by an NPN BJT.
 
 Example: An opened "switch" implemented by NPN BJT
+
 ![Transistor as a Switch - Using Transistor Switching](https://www.electronics-tutorials.ws/wp-content/uploads/2013/09/tran46.gif)
 
 Example: A closed "switch" implemented by NPN BJT
+
 ![transistor switch in saturation](https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/transistor-tran47.gif)
 
 By using a transistor, we can build an amplifier circuit, which is the basis of **Anlogue Integrated Circuit** , or a switch circuit, which is the basis of **Digital Integrated Circuit**. 
@@ -46,6 +50,7 @@ By using a transistor, we can build an amplifier circuit, which is the basis of 
 We use multiple transistors to form different kinds of digital logic gates, which are the basic building blocks from all digital circuits and microprocessor-based systems.
 
 Example: An AND gate circuit implemented by 2 NPN BJT
+
 ![Logic AND Gate Tutorial with Logic AND Gate Truth Table](https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/logic-log43.gif)
 
 
@@ -86,6 +91,7 @@ PAL or PLA can be programmed by **anti-fuse technology(irreversible)** or EEPROM
 
 ## Field Programmable Gate Array (FPGA)
 ![FPGA Design, Architecture and Applications (Updated) [2024]](https://www.logic-fruit.com/wp-content/uploads/2021/12/FPGA-Graphics-1.jpg.webp)
+
 Based on PAL and PLA, FPGA is developed to fulfill more complex and large-scale digital circuit applications. The key feature of FPGA is "field", which means the digital circuit design can be reprogrammed outside the factory, which gives us greater flexibility and agility in utilizing it. 
 
 ### Structure of a FPGA
@@ -151,6 +157,7 @@ Unlike PLDs, a General purpose processor is designed to run a large variety of g
 ##  Comparison between different Digital IC
 
 ![FPGAs, Deep Learning, Software Defined Networks and the Cloud: A Love Story  Part 1 | by Jamal Robinson | Medium](https://miro.medium.com/v2/resize:fit:1400/1*ROC6Psob0nLEMZ1igILpwA.png)
+
 All the abovementioned digital IC can be compared in 2 parameters: Flexibility and Efficency.
 
 As mentioned before, general purpose processor's architecture is designed to run a large variety of general instructions to cater to the most number of scenarios as possible. However, many steps are required for running a task in a general-purpose processor, resulting in an efficiency bottleneck. 
@@ -165,13 +172,16 @@ Multiprocessor System-on-Chip is a technology to integrate general processor(CPU
 ## Zynq® UltraScale+™ MPSoC and Ultra96
 
 ![](https://www.amd.com/content/dam/amd/en/images/illustrations/2617829-zynq-eg-block.jpg)
+
 Developed by AMD Xilinx, Zynq® UltraScale+™ MPSoC combines the capabilities of a traditional FPGA in the name of "Programmable Logic" with a high-performance processing system, making it a powerful and versatile platform for a wide range of applications.
 
 ![Avnet Ultra96-V2](https://china.xilinx.com/content/dam/xilinx/imgs/prime/ultra96-v2-front-view.jpg)
+
 Zynq® UltraScale+™ MPSoC is used in our main course hardware: Avnet Ultra96-V2 development board. 
 
 ## AMD Xilinx Vivado
 ![设计输入和实现](https://china.xilinx.com/content/xilinx/zh/products/design-tools/vivado/implementation/_jcr_content/root/parsysFullWidth/xilinxflexibleslab_1/xilinxflexibleslab-parsys/xilinxtabs/childParsys-methodology/xilinxcolumns_copy_c/childParsys-1/xilinximage.img.png/1697734151140.png)
+
 To design, implement, and verify digital logic circuits for the Programmable Logic in Zynq® UltraScale+™ MPSoC or Xilinx FPGA, Xilinx Vivado design suite is primarily used. 
 ### Key Features and capabilities of the AMD Vivado
 1.  Integrated Design Environment (IDE):
@@ -197,6 +207,7 @@ In your browser, connect to http://192.168.3.1/. Enter Login password: **xilinx*
 
 Juypter Notebook is used as the GUI IDE for PYNQ. Juypter Notebook support running Python notebook and Linux terminal. 
 ![class](https://imgur.com/C0vT626.png)
+
 ### Open and Run a Displayport example notebook 
 1. Connect MiniDisplayport to DP-to-HDMI converter, HDMI cable, and HDMI Video Capture card
 2. Connect HDMI Video Capture card to **your computer's** USB port
@@ -204,10 +215,12 @@ Juypter Notebook is used as the GUI IDE for PYNQ. Juypter Notebook support runni
 4. Open "common" folder
 5. In the "common" folder, open "display_port_introduction.ipynb" notebook
 ![Imgur](https://imgur.com/FZDMTYC.png)
+
 6. Make sure you connect everything properly and open the "Camera" application in your computer.
+
 ![Imgur](https://imgur.com/4kXYJsH.png)
 
-8. Run the whole notebook to display camera output to your computer
+7. Run the whole notebook to display camera output to your computer
 ![Imgur](https://imgur.com/wwttGSc.png)
 
 ### Using Linux Terminal in Juypter Notebook in PYNQ
