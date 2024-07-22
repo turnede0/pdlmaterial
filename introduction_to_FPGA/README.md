@@ -96,6 +96,7 @@ Based on PAL and PLA, FPGA is developed to fulfill more complex and large-scale 
 
 ### Structure of a FPGA
 1.  Logic Blocks:
+
     ![classes](./CLB.png)
     
     -   FPGAs consist of a large number of configurable logic blocks (CLBs) that can be interconnected to implement various logic functions. Each CLB typically contains Lookup Tables(LUTs), flip-flops, and multiplexers.
