@@ -146,20 +146,14 @@ Example: A Data Flip-Flop IC
 
 The development of integrated circuits and chips can be easily illustrated by the **Scale of Integration**, which distinguishes how many transistors can be fitted into a defined surface area on a semiconductor material.
 
-  
+
 
 | Scale of Integration |Name | Year | Transistor count | Logic gates number | Example |
-
 |---|---|---|---|---|---|
-
 | SSI| _small-scale integration_ | 1964 | 1 to 10 | 1 to 12 | Flip-Flops |
-
 | MSI | _medium-scale integration_ | 1968 | 10 to 500 | 13 to 99 |Counters |
-
 | LSI |_large-scale integration_ | 1971 | 500 to 20 000 | 100 to 9999 | Intel 4004(First mircroprocessor) |
-
 |VLSI|_very large-scale integration_ | 1980 | 20 000 to 1 000 000 | 10 000 to 99 999 | System on Chip(SoC) |
-
 |ULSI|_ultra-large-scale integration_| 1984 | 1 000 000 and more | 100 000 and more | AMD Ryzen 9 |
 
   
