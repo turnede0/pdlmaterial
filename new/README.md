@@ -640,3 +640,6 @@ E.g.
 - Add a custom font
 - Rotate your image inserted on to the animated background
 - resize the image so that it fits on to the animated UI 
+
+### Submit your Exercise here, file format (yourname_asm1.py)
+https://stemturnede.sharepoint.com/:f:/g/Ek9SQ_XANxpJtcmcCFelahwBtetAgsL6JQvE0TNT7VrXtQ?e=vawpBC
