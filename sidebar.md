@@ -2,7 +2,7 @@
 - [Lesson 1 - Python Basics](basics/)
 - [Lesson 1 - CV2_UI](new/)
 - [Lesson 2 - FPGA](introduction_to_FPGA/)
-- [Lesson 3 - Overlay](introduction_to_FPGA/)
+- [Lesson 3 - Overlay](overlay/)
 - [Image_Processing](Image_Processing/)
 - [Vivado](vivado_flow/)
 - [Custom_DPU](custom_dpu/)
