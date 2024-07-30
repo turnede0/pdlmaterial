@@ -79,7 +79,7 @@ Example: Block diagram of the Base overlay in Ultra96, provided with 2 AXI UART 
 ![Imgur](https://imgur.com/lQEWsz0.png)
 
 ### Loading the overlay
-You can try to open the "creating_Ultra96_overlays.ipynb" and run the first 3 blocks of code in the notebook to load the overlay.
+You can try to open the "creating_Ultra96_overlays.ipynb" and run the first 2 blocks of code in the notebook to load the overlay.
 ![Imgur](https://imgur.com/vM88wtJ.png)
 
 By loading the overlay, the Python code will instruct PS to use the defined **bitstream** to program the PL
@@ -104,6 +104,7 @@ To utilize PS GPIO on PYNQ, it is similar to how you would run it on a linux emb
 
 ### Installing Ultra96 breakout board 
 The provided Ultra96 breakout board have both PL and PS 2.54mm jumper pinouts avaliable for development uses.
+
 ***CAUTION:*** Make sure your install it **CORRECTLY(matching the pins)** such that you won't damage Ultra96 or the breakout board.
 
 ![Imgur](https://imgur.com/o8xXiOG.png)
@@ -204,11 +205,11 @@ PWM (Pulse Width Modulation) is a technique used to control the amount of power 
 
 The PWM pulse is square wave signal, which is characterized by a period (T) and a pulse width (t). From this we can deduce the frequency of the PWM signal using the following formula:
 
-$Frequency = 1 / Period$
+$$Frequency = 1 / Period$$
 
 The duty cycle is the ratio of the pulse width (t) to the period (T), expressed as a percentage. The duty cycle determines the proportion of time the signal is in the "high" state compared to the "low" state.
 
-$Duty Cycle = (t / T) × 100%$
+$$Duty Cycle = (t / T) × 100%$$
 
 
 Now that PS GPIO has been covered, use them to create a PWM signal, an easy method would be to use time.sleep() and a while loop. For example
