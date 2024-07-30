@@ -26,8 +26,15 @@ Example: Logic gates combination in Verilog and in acutal circuit diagram
 	assign z =((a&b)|(c^d)&~e);
 ```
 ![simple combinational logic with assign](https://www.chipverify.com/images/verilog/schematic/simple_combo_with_assign.png)
+
 ### Digital circuit design with Intellect Property(IP) Blocks and Block Diagram
-Another more modern way to perform digital circuit design is 
+Another more efficient and stable way to perform digital circuit design is to use Intellect Property(IP) Blocks. IP Blocks are pre-designed and pre-verified digital circuit components written in HDLs that can be integrated into larger IC design.
+
+Example: Block diagram of the Base overlay in Ultra96. Here we can see they reuse 2 identical AXI UART Block.
+![Imgur](https://imgur.com/lQEWsz0.png)
+
+
+
 ### **Synthesis**
 After completing the circuit design with HDLs, synethsis need to be done to convert the code into a **netlist**, which is a list of logical components (gates, flip-flops, etc.) and their interconnections.
 
@@ -67,6 +74,15 @@ In Ultra96, we can use PYNQ, which allow us to run Python code on the PS using J
 ## Base Overlay
 
 Overlay is a python interface in PYNQ to allow PS interpret, communicate and control the digital circuit in PL using Python code and Jupyter Notebook.
+
+Example: Block diagram of the Base overlay in Ultra96, provided with 2 AXI UART Block.
+![Imgur](https://imgur.com/lQEWsz0.png)
+
+### Loading the overlay
+You can try to open the "creating_Ultra96_overlays.ipynb" and run the first 3 blocks of code in the notebook to load the overlay.
+![Imgur](https://imgur.com/vM88wtJ.png)
+
+By loading the overlay, the Python code will instruct PS to use the defined **bitstream** to program the PL
 
 
 ## PS GPIO
