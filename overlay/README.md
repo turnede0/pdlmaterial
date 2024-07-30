@@ -205,11 +205,11 @@ PWM (Pulse Width Modulation) is a technique used to control the amount of power 
 
 The PWM pulse is square wave signal, which is characterized by a period (T) and a pulse width (t). From this we can deduce the frequency of the PWM signal using the following formula:
 
-$$Frequency = 1 / Period$$
+$$ Frequency = 1 / Period $$
 
 The duty cycle is the ratio of the pulse width (t) to the period (T), expressed as a percentage. The duty cycle determines the proportion of time the signal is in the "high" state compared to the "low" state.
 
-$$Duty Cycle = (t / T) × 100%$$
+$$ Duty Cycle = (t / T) × 100% $$
 
 
 Now that PS GPIO has been covered, use them to create a PWM signal, an easy method would be to use time.sleep() and a while loop. For example
