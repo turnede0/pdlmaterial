@@ -12,7 +12,7 @@
 
 To design, implement, and verify digital logic circuits for the Programmable Logic in Zynq® UltraScale+™ MPSoC or Xilinx FPGA, Xilinx Vivado design suite is primarily used. Let's take a deeper look in the process of developing and implementing a digital circuit on an FPGA device using Xilinx Vivado.
 
-### Digital circuit design with Hardware Descripton Language(HDL)
+### 1.1 Digital circuit design with Hardware Descripton Language(HDL)
 
 Other than building the digital circuit from scratch using wires and ICs, we use **Hardware Descripton Language(HDL)** to aid us to design digital circuit in computer tools like Vivado. Common HDL are Verilog and VHDL.
 
@@ -27,7 +27,7 @@ Example: Logic gates combination in Verilog and in acutal circuit diagram
 ```
 ![simple combinational logic with assign](https://www.chipverify.com/images/verilog/schematic/simple_combo_with_assign.png)
 
-### Digital circuit design with Intellect Property(IP) Blocks and Block Diagram
+### 1.2 Digital circuit design with Intellect Property(IP) Blocks and Block Diagram
 Another more efficient and stable way to perform digital circuit design is to use Intellect Property(IP) Blocks. IP Blocks are pre-designed and pre-verified digital circuit components written in HDLs that can be integrated into larger IC design.
 
 Example: Block diagram of the Base overlay in Ultra96. Here we can see they reuse 2 identical AXI UART Block.
@@ -35,10 +35,10 @@ Example: Block diagram of the Base overlay in Ultra96. Here we can see they reus
 
 
 
-### **Synthesis**
+### 2. Synthesis
 After completing the circuit design with HDLs, synethsis need to be done to convert the code into a **netlist**, which is a list of logical components (gates, flip-flops, etc.) and their interconnections.
 
-### Simulation and Verification
+### 3. Simulation and Verification
 Engineers can use Verilog to simulate the circuit based on the result of sythesis, to ensure the design meets the required specifications and behaves as expected. Engineers will review the circuit functionality based on the **timing diagrams** of input and output signals.
 
 Or, engineers can use **SystemVerilog** to create testbench to test the circuit with software programs.
@@ -46,7 +46,7 @@ Or, engineers can use **SystemVerilog** to create testbench to test the circuit 
 Example: Timing diagram in Verilog from a Simulation
 ![Timing Diagram](https://support.xilinx.com/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=0682E00000JpKyD&operationContext=CHATTER&contentId=05T2E00001HK70L)
 
-### Implementation
+### 4. Implementation
 One of the strength of designing digital circuit with HDLs is that the design can basically be applied to any FPGA device. 
 
 In Vivado, implementation tools allow engineers to place the synthesized netlist is placed on the specific FPGA's physical resources, such as logic blocks, memory, and I/O pins. Routing will be done to connects the placed components using the available interconnect resources on the FPGA.
@@ -56,7 +56,7 @@ Then, timing analysis can be performed to make sure the whole circuit design is 
 Example: Implementation Report in Vivado
 ![Introduction to Vivado Reports](https://cf-images.us-east-1.prod.boltdns.net/v1/static/17209957001/41f2233b-c449-488d-9ba7-f51b93b2f386/07d6d702-a7d5-43c5-9eac-b183f7c5bca6/1280x720/match/image.jpg)
 
-### Generation Bitstream
+### 5. Generation Bitstream
 After Implementation, the placed and routed circuit design is translated into a configuration bitstream, which is a binary file that can be used to program the configuration block inside FPGA.
 
 Although we won't go through the FPGA design flow step-by-step in the lesson, you can refer to the "Vivado" page to suppliment your understanding. 
@@ -165,7 +165,7 @@ gpio1.write(0)
 
 #writes a low signal out of 0V
 
-gpio1.read()
+gpio2.read()
 
 #reads the voltage level at the pin when run if 1.8V will return 1 else if 0V will return 0.
 
@@ -182,11 +182,21 @@ Note you cannot write on a read pin or read on a write pin. You have to release 
 ```python
 
 gpio1.release()
+gpio2.release()
 
 # gpio1 should be replaced with the variable you assigned your pin name
 
 ```
+### LED Example
+Reminder: LED Polarity
+![LED Polarity Tester : 4 Steps - Instructables](https://content.instructables.com/FPB/EG4N/FK8FVU92/FPBEG4NFK8FVU92.png?auto=webp&frame=1&width=320&md=c54a447ba3b28d6eeb5c80af2800bad1)
 
+ 1. Connect the **cathode** of the LED to breadboard row 1, **anode** to row 2. Connect a resistor to breadboard  row 2 and row 6.
+![Imgur](https://imgur.com/V31fKTg.png)
+ 2. From the breakout board, connect **IO36** pin to the same row of **cathode** of the LED using jumper wire. Connect **GND** pin to the row 6 using jumper wire.
+ 
+ ![Imgur](https://imgur.com/MdhsBcc.png)
+3. Toggle the LED using the abovemention Python code.
   
 ### Generating PWM signal with PS GPIO Library
 ![What is PWM Dimming For LED Driver - uPowerTek](https://www.upowertek.com/wp-content/uploads/2021/11/PWM-Signal-Dimming-VS-PWM-Output-Dimming-VS-CCR-Dimming-1.png)
@@ -229,7 +239,7 @@ For more details on which Pins are in the PS GPIO please check the official docu
   ## In class Hardware exercise
  By the abovementioned PS GPIO example, create a hardware prototypes with the following features using the provided material and your electronic+software knowledge:
 
-### Task 1 LED Blink
+### Task:  LED Blink
  - Using the light sensor as GPIO input 
  - GPIO output to LED
  - When the light sensor doesn't sense anything, the LED blinks in this pattern: 1 second HIGH -> 1 second LOW ->repeat
