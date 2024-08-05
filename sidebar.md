@@ -3,7 +3,7 @@
 - [Lesson 1 - CV2_UI](new/)
 - [Lesson 2 - FPGA](introduction_to_FPGA/)
 - [Lesson 3 - Overlay](overlay/)
-- [Image_Processing](Image_Processing/)
+- [Lesson 4 - Image_Processing](Image_Processing/)
 - [Vivado](vivado_flow/)
 - [Custom_DPU](custom_dpu/)
 - [I/O](IO/)

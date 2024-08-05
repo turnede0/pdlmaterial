@@ -1,13 +1,21 @@
 # Image Processing
 
-# Filtering in Image Processing
+# Image Processing in Python on Ultra96
 
-Filtering is a fundamental operation in image processing that involves modifying the pixels of an image to achieve desired effects such as noise reduction, edge detection, or image enhancement.
-[Material for this session](https://stemturnede.sharepoint.com/:u:/g/EULXb62uu1dBjEOB8kQsvCwBFOABUB0m6HI7jauE5FemWw?e=IQE6Fm)
+After knowing the basics of IC, MPSoC and Ultra96, let's try to implement image processing algorithms in Ultra96 using Jupyter Notebook and Python.
 
-## How Filtering Works
+Power on Ultra96 and open a new notebook in Exercise/Image_Processing.ipynb 
+
+# Filter in Image Processing
+
+Filtering is a fundamental operation in image processing that involves modifying the pixels of an image to achieve des
+ired effects such as noise reduction, edge detection, or image enhancement.
+## [Material for this session](https://stemturnede.sharepoint.com/:u:/g/EULXb62uu1dBjEOB8kQsvCwBFOABUB0m6HI7jauE5FemWw?e=IQE6Fm)
+
+## Principle of Filtering
 
 Filtering is typically performed using a convolution operation. A filter, also known as a kernel or mask, is a small matrix that is applied to each pixel of the image. The filter modifies the pixel values based on the values of its neighboring pixels.
+![Image Processing Class #4 — Filters | by Pitchaya Thipkham | Towards Data  Science](https://miro.medium.com/v2/resize:fit:948/1*03WQw5miNzaXYq0UXafTOg.png)
 
 The convolution process involves sliding the filter over the image and computing the weighted sum of the filter values multiplied by the corresponding pixel values in the neighborhood. This calculation is performed for each pixel, resulting in a new filtered image.
 
@@ -491,3 +499,5 @@ while True:
 cap.release()
 cv2.destroyAllWindows()
 ```
+# Class Task
+
