@@ -500,4 +500,9 @@ cap.release()
 cv2.destroyAllWindows()
 ```
 # Class Task
-
+Using function and what you have learn in lesson 1, alternate the abovemention detection code by creating dedicated functions for the following colours detection:
+- black(default)
+- white
+- red
+- yellow
+- blue
