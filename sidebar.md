@@ -4,6 +4,7 @@
 - [Lesson 2 - FPGA](introduction_to_FPGA/)
 - [Lesson 3 - Overlay](overlay/)
 - [Lesson 4 - Image_Processing](Image_Processing/)
+- [Lesson 5 - Computer Vision](Lesson 5/)
 - [Vivado](vivado_flow/)
 - [Custom_DPU](custom_dpu/)
 - [I/O](IO/)
